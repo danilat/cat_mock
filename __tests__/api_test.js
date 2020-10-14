@@ -1,6 +1,7 @@
 const app = require('./../app')
 const supertest = require('supertest')
 const request = supertest(app)
+jest.setTimeout(10000);
 
 it('Gets the hello world endpoint', async done => {
     const response = await request.get('/')

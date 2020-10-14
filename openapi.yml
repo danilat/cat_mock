@@ -1,0 +1,49 @@
+swagger: "2.0"
+info:
+  description: "This is the documentation for CatMock detector API"
+  version: "1.0.0"
+  title: "CatMock detector Petstore"
+schemes:
+- "http"
+paths:
+  /cat:
+    post:
+      summary: "Create a new cat"
+      description: "Create a new cat"
+      operationId: "createCat"
+      consumes:
+      - "application/json"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Pet object that needs to be added to the store"
+        required: true
+        schema:
+          type: "object"
+          properties:
+            name:
+              type: "string"
+            url:
+              type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Cat"
+        "400":
+          description: "Invalid parameters"
+definitions:
+  Cat:
+    type: "object"
+    properties:
+      name:
+        type: "string"
+      url:
+        type: "string"
+      howMany:
+        type: "integer"
+        format: "int64"

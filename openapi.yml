@@ -23,8 +23,6 @@ paths:
         schema:
           type: "object"
           properties:
-            name:
-              type: "string"
             url:
               type: "string"
       responses:
@@ -40,10 +38,8 @@ definitions:
   Cat:
     type: "object"
     properties:
-      name:
-        type: "string"
       url:
         type: "string"
-      howMany:
+      number:
         type: "integer"
         format: "int64"

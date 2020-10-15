@@ -11,9 +11,8 @@ app.post('/cats', (request, reponse) => {
     setTimeout(() => {
         console.log('waited some random time');
         reponse.json({
-            name: request.body.name,
             url: request.body.url,
-            howMany: 1
+            number: 42
         })
     }, randomInt(3000, 6000));
 })
